@@ -1,0 +1,38 @@
+姓名：谢厚麟
+学号：2023104665
+一、实验内容
+本实验实现灰度图像的下采样、插值恢复，并通过 MSE/PSNR、FFT、DCT 进行图像质量与频域分析。
+二、文件结构
+lab03/
+02.py 主程序
+work3.jpg 输入灰度图像（必须）
+生成的结果图 自动保存
+README.docx 本文档
+三、环境依赖
+Python 3.8+需要安装：pip install opencv-python numpy matplotlib
+四、运行方法
+将灰度图片命名为 work3.jpg 放入 lab03 文件夹
+运行 02.py
+所有结果自动保存到 lab03 目录
+五、功能说明
+图像读取：灰度图读取
+下采样：
+无滤波直接缩小
+高斯滤波后缩小（减少混叠）
+插值恢复：
+最近邻
+双线性
+双三次
+质量评价：MSE、PSNR
+频域分析：FFT 频谱、DCT 能量占比
+结果保存：所有图像保存到 lab03
+六、未找到图片时的现象
+如果 没有 work3.jpg 或路径错误：程序直接报错：FileNotFoundError，停止运行，不会生成任何结果图。
+七、输出文件说明
+original.png 原图down_no_filter.png 无滤波缩小down_filtered.png 高斯滤波后缩小restored_Nearest.png 最近邻恢复restored_Bilinear.png 双线性恢复restored_Bicubic.png 双三次恢复fft_.png FFT 频谱图
+dct_.png DCT 系数图
+八、实验结论
+高斯滤波可明显减少下采样混叠
+双三次插值效果最好，最近邻最差
+FFT 显示下采样丢失高频信息
+DCT 低频能量占比越高，图像越平滑
